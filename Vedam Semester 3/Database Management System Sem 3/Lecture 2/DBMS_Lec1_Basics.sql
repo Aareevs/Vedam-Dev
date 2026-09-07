@@ -70,7 +70,7 @@ VALUES
 -- SELECT * FROM employee;
 SELECT name,salary FROM employee;
 
--- 3. DISTINCT QUES
+-- 3. DISTINCT QUES - This command is used to display unique values from a column.
 
 -- Q1. Display unique cities from the employee table.
 SELECT DISTINCT city FROM employee;
@@ -87,7 +87,7 @@ SELECT DISTINCT experience FROM employee;
 -- Q5. Display unique city and department combinations.
 SELECT DISTINCT city, department FROM employee;
 
--- 4. WHERE QUES
+-- 4. WHERE QUES - This command is used to filter records based on a specified condition.
 
 -- Q1. Display employees from Pune.
 SELECT * FROM employee WHERE city = 'Pune';
@@ -104,7 +104,7 @@ SELECT * FROM employee WHERE department = 'Finance';
 -- Q5. Display employees from Delhi.
 SELECT * FROM employee WHERE city = 'Delhi';
 
--- 5. COMPARISON OPERATORS QUES
+-- 5. COMPARISON OPERATORS QUES - This command is used to compare values in a column with a specified value.
 
 -- Q1. [=] Display employees from Pune.
 SELECT * FROM employee WHERE city = 'Pune';
@@ -121,7 +121,7 @@ SELECT * FROM employee WHERE experience >= 5;
 -- Q5. [!=] Display all employees except those in the IT department.
 SELECT * FROM employee WHERE department != 'IT';
 
--- 9. LIKE % QUES
+-- 9. LIKE % QUES - This command is used to search for a specified pattern in a column.
 
 -- Q1. Display names starting with A.
 SELECT * FROM employee WHERE name LIKE 'A%';
@@ -138,7 +138,7 @@ SELECT * FROM employee WHERE name LIKE '%ri%';
 -- Q5. Display employees whose email ends with @gmail.com.
 SELECT * FROM employee WHERE email LIKE '%@gmail.com';
 
--- 10. LIKE — _
+-- 10. LIKE — _ (underscore) -> This command is used to search for a specified pattern in a column where the underscore (_) represents a single character.
 
 -- Q1. Display names with exactly 4 characters.
 SELECT * FROM employee WHERE name LIKE '____';
@@ -155,7 +155,7 @@ SELECT * FROM employee WHERE name LIKE 'An%';
 -- Q5. Display names with exactly 5 characters.
 SELECT * FROM employee WHERE name LIKE '_____';
 
--- 11. IN
+-- 11. IN - This command is used to filter records based on a specified list of values.
 
 -- Q1. Display employees from Pune, Mumbai, and Delhi.
 SELECT * FROM employee WHERE city IN ('Pune', 'Mumbai', 'Delhi');
@@ -172,7 +172,7 @@ SELECT * FROM employee WHERE id IN (1, 5, 10, 15, 20);
 -- Q5. Display employees from Pune, Delhi, and Indore.
 SELECT * FROM employee WHERE city IN ('Pune', 'Delhi', 'Indore');
 
--- 12. NOT IN
+-- 12. NOT IN - This command is used to filter records that do not match a specified list of values.
 
 -- Q1. Display employees except those from Pune and Mumbai.
 SELECT * FROM employee WHERE city NOT IN ('Pune', 'Mumbai');
@@ -189,7 +189,7 @@ SELECT * FROM employee WHERE id NOT IN (1, 2, 3, 4, 5);
 -- Q5. Display employees except those in the Finance and Sales departments.
 SELECT * FROM employee WHERE department NOT IN ('Finance', 'Sales');
 
--- 13. BETWEEN
+-- 13. BETWEEN - This command is used to filter records within a specified range of values.
 
 -- Q1. Display employees whose salary is between 30000 and 50000.
 SELECT * FROM employee WHERE salary BETWEEN 30000 AND 50000;
@@ -206,7 +206,7 @@ SELECT * FROM employee WHERE salary BETWEEN 40000 AND 60000;
 -- Q5. Display employees whose age is between 22 and 27.
 SELECT * FROM employee WHERE age BETWEEN 22 AND 27;
 
--- 14. NOT BETWEEN
+-- 14. NOT BETWEEN - This command is used to filter records outside a specified range of values.
 
 -- Q1. Display employees whose salary is outside 30000–50000.
 SELECT * FROM employee WHERE salary NOT BETWEEN 30000 AND 50000;
@@ -223,7 +223,7 @@ SELECT * FROM employee WHERE salary NOT BETWEEN 40000 AND 60000;
 -- Q5. Display employees whose age is outside 22–27.
 SELECT * FROM employee WHERE age NOT BETWEEN 22 AND 27;
 
--- 15. IS NULL
+-- 15. IS NULL - This command is used to filter records with NULL values in a specified column.
 
 -- Q1. Display employees whose email is NULL.
 SELECT * FROM employee WHERE email IS NULL;
@@ -240,7 +240,7 @@ SELECT * FROM employee WHERE email IS NULL AND department = 'IT';
 -- Q5. Display employees whose email is NULL and whose experience is 5 or more years.
 SELECT * FROM employee WHERE email IS NULL AND experience >= 5;
 
--- 16. IS NOT NULL
+-- 16. IS NOT NULL - This command is used to filter records with non-NULL values in a specified column.
 
 -- Q1. Display employees whose email is available.
 SELECT * FROM employee WHERE email IS NOT NULL;
@@ -257,7 +257,7 @@ SELECT * FROM employee WHERE email IS NOT NULL AND department = 'IT';
 -- Q5. Display employees whose email is available and whose experience is 5 or more years.
 SELECT * FROM employee WHERE email IS NOT NULL AND experience >= 5;
 
--- 17. ORDER BY
+-- 17. ORDER BY QUES - This command is used to sort the result set in ascending or descending order based on one or more columns.
 
 -- Q1. Display employees in ascending order of salary.
 SELECT * FROM employee ORDER BY salary ASC;
@@ -274,7 +274,7 @@ SELECT * FROM employee ORDER BY experience DESC;
 -- Q5. Display employees in alphabetical order of name.
 SELECT * FROM employee ORDER BY name ASC;
 
--- 18. LIMIT
+-- 18. LIMIT QUES - This command is used to limit the number of records returned in the result set.
 
 -- Q1. Display the first 5 records from the employee table.
 SELECT * FROM employee LIMIT 5;
@@ -291,7 +291,7 @@ SELECT * FROM employee ORDER BY experience DESC LIMIT 5;
 -- Q5. Display the 5 youngest employees by age.
 SELECT * FROM employee ORDER BY age ASC LIMIT 5;
 
--- 19. COUNT()
+-- 19. COUNT() QUES - This command is used to count the number of records in a specified column or table.
 
 -- Q1. Count the total number of employees.
 SELECT COUNT(*) FROM employee;
@@ -309,7 +309,7 @@ SELECT COUNT(*) FROM employee WHERE salary > 50000;
 SELECT COUNT(*) FROM employee WHERE experience >= 5;
 
 
--- 20. SUM()
+-- 20. SUM() QUES - This command is used to calculate the total sum of a numeric column.
 
 -- Q1. Calculate the total salary of all employees.
 SELECT SUM(salary) FROM employee;
@@ -326,3 +326,106 @@ SELECT SUM(salary) FROM employee WHERE salary BETWEEN 30000 AND 50000;
 -- Q5. Calculate the total salary of employees whose experience is 5 or more years.
 SELECT SUM(salary) FROM employee WHERE experience >= 5;
 
+-- 21. AVG() QUES - This command is used to calculate the average value of a numeric column.
+
+-- Q1. Calculate the average salary of all employees.
+SELECT AVG(salary) FROM employee;
+
+-- Q2. Calculate the average salary of the HR department.
+SELECT AVG(salary) FROM employee WHERE department = 'HR';
+
+-- Q3. Calculate the average salary of the IT department.
+SELECT AVG(salary) FROM employee WHERE department = 'IT';
+
+-- Q4. Calculate the average salary of employees from Pune.
+SELECT AVG(salary) FROM employee WHERE city = 'Pune';
+
+-- Q5. Calculate the average salary of employees whose experience is 5 or more years.
+SELECT AVG(salary) FROM employee WHERE experience >= 5;
+
+
+-- 22. MAX() QUES - This command is used to find the maximum value in a numeric column.
+
+-- Q1. Find the highest salary in the employee table.
+SELECT MAX(salary) FROM employee;
+
+-- Q2. Find the maximum age in the employee table.
+SELECT MAX(age) FROM employee;
+
+-- Q3. Find the maximum experience in the employee table.
+SELECT MAX(experience) FROM employee;
+
+-- Q4. Find the highest salary in the IT department.
+SELECT MAX(salary) FROM employee WHERE department = 'IT';
+
+-- Q5. Find the highest salary in Pune.
+SELECT MAX(salary) FROM employee WHERE city = 'Pune';
+
+
+-- 23. MIN() QUES - This command is used to find the minimum value in a numeric column.
+
+-- Q1. Find the lowest salary in the employee table.
+SELECT MIN(salary) FROM employee;
+
+-- Q2. Find the minimum age in the employee table.
+SELECT MIN(age) FROM employee;
+
+-- Q3. Find the minimum experience in the employee table.
+SELECT MIN(experience) FROM employee;
+
+-- Q4. Find the lowest salary in the HR department.
+SELECT MIN(salary) FROM employee WHERE department = 'HR';
+
+-- Q5. Find the lowest salary in Mumbai.
+SELECT MIN(salary) FROM employee WHERE city = 'Mumbai';
+
+
+-- 24. GROUP BY QUES - This command is used to group records based on a specified column and perform aggregate functions on each group.
+
+-- Q1. Find the number of employees in each department.
+SELECT department, COUNT(*) FROM employee GROUP BY department;
+
+-- Q2. Find the number of employees in each city.
+SELECT city, COUNT(*) FROM employee GROUP BY city;
+
+-- Q3. Calculate the total salary for each department.
+SELECT department, SUM(salary) FROM employee GROUP BY department;
+
+-- Q4. Calculate the average salary for each city.
+SELECT city, AVG(salary) FROM employee GROUP BY city;
+
+-- Q5. Find the highest salary in each department.
+SELECT department, MAX(salary) FROM employee GROUP BY department;
+
+
+-- FINAL MIXED PRACTICE QUES
+
+-- Q1. Pune IT employees whose salary is greater than 40000.
+SELECT * FROM employee WHERE city = 'Pune' AND department = 'IT' AND salary > 40000;
+
+-- Q2. Mumbai or Delhi employees whose age is greater than 25.
+SELECT * FROM employee WHERE city IN ('Mumbai', 'Delhi') AND age > 25;
+
+-- Q3. Employees from IT, HR, and Finance whose salary is greater than 35000.
+SELECT * FROM employee WHERE department IN ('IT', 'HR', 'Finance') AND salary > 35000;
+
+-- Q4. Employees whose salary is between 40000 and 60000 and whose experience is 5 or more years.
+SELECT * FROM employee WHERE salary BETWEEN 40000 AND 60000 AND experience >= 5;
+
+-- Q5. Employees whose name starts with A and whose age is greater than 25.
+SELECT * FROM employee WHERE name LIKE 'A%' AND age > 25;
+
+-- Q6. Employees except those from Pune and Mumbai whose salary is between 40000 and 60000.
+SELECT * FROM employee WHERE city NOT IN ('Pune', 'Mumbai') AND salary BETWEEN 40000 AND 60000;
+
+-- Q7. Employees whose email is NULL and whose salary is greater than 40000.
+SELECT * FROM employee WHERE email IS NULL AND salary > 40000;
+
+-- Q8. Employees whose email is available and whose name starts with S.
+SELECT * FROM employee WHERE email IS NOT NULL AND name LIKE 'S%';
+
+-- Q9. For each department, find the employee count and total salary.
+SELECT department, COUNT(*), SUM(salary) FROM employee GROUP BY department;
+
+-- Q10. For each city, find the average salary and highest salary.
+SELECT city, AVG(salary), MAX(salary) FROM employee GROUP BY city;
